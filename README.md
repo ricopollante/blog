@@ -1,7 +1,10 @@
 # Router / Views
 Installation setup:
+
 create db name(postgresql) : apidb
+
 postgresql user: postgres
+
 postgresql password: root
 
 
@@ -10,9 +13,13 @@ cd blog
 pipenv install psycopg2 flask-migrate flask-script marshmallow flask-bcrypt pyjwt flask flask-sqlalchemy flask-marshmallow marshmallow-sqlalchemy requests
 
 pipenv -m shell
+
 flask db init
+
 flask db migrate
+
 flask db upgrade
+
 python app.py
 
 USERS:
