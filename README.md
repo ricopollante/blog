@@ -17,9 +17,13 @@ python app.py
 
 USERS:
 
+
+
 -Get All members
 
 curl -i -H "Content-Type: application/json" -X GET 127.0.0.1:5000/members
+
+
 
 
 
@@ -28,6 +32,9 @@ I used userid the determined the admin and a normal user,
 so basically admin userid is 1 and normal user will be > 1.
 
 curl -i -H "Content-Type: application/json" -X POST -d "{\"username\":\"root\", \"password\":\"admin\"}" 127.0.0.1:5000/member/signup
+
+
+
 
 
 
@@ -40,11 +47,17 @@ Output:
     Token: as6dgvyyrg77rjjjoe98u;
 }
 
+
+
+
+
 List:
+
 
 -Get categories
 
 #curl -i -H "Content-Type: application/json" -X GET 127.0.0.1:5000/categories
+
 
 
 
@@ -63,6 +76,8 @@ I used JWT to check if token was admin or a normal member .
 
 
 
+
+
 Cards:
 
 -Create CARDS / NEWS
@@ -77,6 +92,8 @@ and you cant add new News.
 I used JWT token to get ID of a user to determine the who's added new news.
 
 
+
+
 -Get All News
 
 curl -i -H "Content-Type: application/json" -X GET 127.0.0.1:5000/news
@@ -89,9 +106,13 @@ curl -i -H "Content-Type: application/json" -X GET 127.0.0.1:5000/news
 curl -i -H "Content-Type: application/json" -X GET 127.0.0.1:5000/news/1
 
 
+
+
 -Update News
 
-curl -i -H "Content-Type: application/json" -X PUT -d "{\"name\":\"News 4\", \"description\":\"this is a News 4\", \"price\":\"50.00\",\"qty\":\"300\"}" 127.0.0.1:5000/News
+curl -i -H "Content-Type: application/json" -X PUT -d "{\"title\":\"News 4\", \"description\":\"this is a News 4\", \"owner_id\":\"1\", \"category_id\":\"1\"}" 127.0.0.1:5000/News
+
+
 
 
 -Get Delete News
